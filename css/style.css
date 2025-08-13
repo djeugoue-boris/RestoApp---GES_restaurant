@@ -1,0 +1,306 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a, a:visited {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+.none {
+	display: none;
+}
+
+
+/********** Interface de connexion *********/
+
+#panel_connexion {
+	background: linear-gradient(45deg, rgba(40, 51, 97, 0.3), rgba(20, 112, 10, 0.2), rgba(20, 40, 150, 0.5));
+}
+
+#panel_connexion #logo {
+	font-family: forte, verdana;
+	font-size: 40pt;
+	color: white;
+}
+
+#panel_connexion legend {
+	font-size: 12pt;
+	font-weight: bold;
+	color: white;
+}
+
+#panel_connexion input {
+	border-radius: 20px;
+	height: 40px;
+}
+
+/********* Fin Interface de connexion *******/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********* Interface d'administration *******/
+
+/*=======> Gestion du menu */
+
+#app_menu {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 250px;
+	height: 100%;
+	background-color: rgb(155, 104, 10);
+	padding: 10px 10px;
+	overflow: auto
+}
+
+
+
+
+
+#app_menu #menu_close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: red;
+	background-color: transparent;
+	font-weight: bold;
+	padding: 5px 10px;
+	cursor: pointer;
+	font-size: 14pt;
+	display: none;
+	
+}
+
+#app_menu #menu_close:hover {
+	color: white;
+	background-color: red;
+	transition: all 0.5s ease;
+}
+
+#app_menu #logo {
+	color: white;
+	font-size: 30pt;
+	font-family: forte, sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
+
+#app_menu #profil {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	margin: 30px 0px;
+}
+
+#app_menu #profil .profil_img img {
+	width: 60px;
+	height: 60px;
+	object-fit: cover;
+	border-radius: 10px;
+	margin: 5px 10px;
+}
+
+#app_menu #profil .profil_username {
+	font-size: 15pt;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	width: 100%;
+}
+
+#app_menu #profil .profil_username a {
+	color: white;
+	text-decoration: none;
+}
+
+#app_menu #profil .profil_username i {
+	font-size: 15pt;
+	padding: 10px;
+	background-color: rgb(155, 104, 10);
+	border-radius: 20px;
+}
+
+#app_menu #profil .profil_username i:hover {
+	animation: tada 0.3s;
+}
+
+#app_menu #menu a {
+	display: flex;
+	width: 100%;
+	align-items: 100%;
+	justify-content: start;
+	color: white;
+	text-decoration: none;
+	margin: 25px 0px;
+}
+
+#app_menu #menu a:hover {
+	background-color: rgb(155, 104, 10);
+	padding: 10px 0px;
+	border-radius: 30px;
+	transition: all 0.5s ease;
+}
+
+#app_menu #menu a i {
+	font-size: 20pt;
+	margin: 2px 8px
+}
+
+#app_menu #menu a:hover i {
+	transform: rotate(360deg);
+	transition: all 0.5s ease;
+}
+
+#app_menu #menu a span {
+	font-size: 14pt;
+	font-family: forte, sans-serif;
+}
+
+
+
+
+/*=======> Gestion du contenu */
+
+#app_container {
+	position: relative;
+	left: 250px;
+	width: calc(100% - 250px);   /*prend tte la taille de la page moins 250px qui est celui de debut*/
+	height: 100vh;	/*prend toute la hauteur visible*/
+	padding: 10px 10px;
+}
+
+
+/*=======> Gestion de t'entete */
+
+#app_header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 15px;
+	color: white;
+	background-color: rgb(155, 104, 10);
+}
+
+#app_header .header_info {
+	display: flex;
+	align-items: center;
+}
+
+#app_header .header_info i {
+	font-size: 30px;
+	cursor: pointer;
+}
+
+#app_header .header_info i:hover {
+	animation: jello 1s;
+}
+
+
+
+
+
+
+/*=======> Gestion des modules */
+
+#app_module {
+	position: relative;
+	top: 80px;
+	padding: 10px 10px 100px 10px;
+
+}
+
+#app_module table img {
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/*=======> Gestion du footer */
+
+#app_footer {
+	position: fixed;
+	bottom: 0;
+	left: 250px;
+	width: calc(100% - 250px);
+	text-align: center;
+	padding: 10px 0px;
+	font-style: italic;
+}
+
+
+
+
+
+
+/********* Fin Interface d'administration *******/
+
+
+
+/********* Responsive Web Design *******/
+
+@media all and (max-width: 600px) {
+	#app_menu {
+	display: none;
+	top: 0;
+	right: 0;
+	z-index: 99999;
+	opacity: 0.9;
+	}
+
+	#app_menu #menu_close {
+	display: inline;
+	}
+
+	#app_container {
+	left: 0;
+	width: calc(100%);
+	}
+
+	#app_footer {
+	display: none;
+	}
+
+
+	#app_module {
+		padding: 10px 20px;
+	}
+}
+
+/********* Fin Responsive Web Design *******/
+
+
+
+
+
+
+
+
